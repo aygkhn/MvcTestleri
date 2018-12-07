@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div>
+        @ViewBag.Title
+        @foreach (var item in (int[])ViewData["numbers"])
+        {
+            @item<br />
+        }
+    </div>
+</body>
+</html>
