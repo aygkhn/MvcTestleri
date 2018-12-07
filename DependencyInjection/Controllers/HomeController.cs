@@ -23,7 +23,7 @@ namespace DependencyInjection.Controllers
 
             _logger.Log();
 
-            return Content("DenemeDeğişiklik2");
+            return Content("DenemeDeğişiklik");
         }
     }
 }
