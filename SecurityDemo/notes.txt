@@ -1,0 +1,2 @@
+﻿Anti-Cross Site Scripting (XSS) Library 
+https://msdn.microsoft.com/en-us/security/aa973814.aspx

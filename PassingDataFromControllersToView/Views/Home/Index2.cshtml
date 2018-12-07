@@ -1,0 +1,37 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+
+
+    var numbers = ViewData["numbers"] != null ? (int[]) ViewData["numbers"] : new int[0];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+        ---Index View---
+        <br />
+        @ViewData["message"]
+        <br />
+        @ViewBag.MessageV
+        <br />
+
+        @foreach (var number in numbers)
+        {
+            @number
+            <br />
+        }
+        
+        @if (TempData["message"] != null)
+        {
+           @TempData["message"]
+        }
+    </div>
+</body>
+</html>

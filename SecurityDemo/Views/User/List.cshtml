@@ -1,0 +1,25 @@
+﻿@model List<SecurityDemo.Models.User>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>User Name</th>
+            <th>Mail</th>
+            <th>About</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FullName</td>
+                <td>@user.UserName</td>
+                <td>@user.Mail</td>
+                <td>@Html.Raw(user.About)</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { userId = user.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>

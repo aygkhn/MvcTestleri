@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var categories = new SelectList(ViewBag.Categories, "CategoryId", "CategoryName");
+}
+
+<div class="page-header">
+    <h1 class="text-primary">New Product <small>with html helper</small></h1>
+</div>
+
+@Html.ValidationSummary(false,"Fix the errors","div")
+
+@using (Html.BeginForm("Insert", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ProductName", "Product Name")
+        @Html.TextBox("ProductName", "", new { placeholder = "Enter Product Name", data_url = "abc", @class = "form-control" })
+        @Html.ValidationMessage("ProductName")
+    </div>
+    <div class="form-group">
+        @Html.Label("CategoryId", "Category")
+        @Html.DropDownList("CategoryId", categories, "--Select One--", new { @class = "form-control" })
+        @*@Html.ValidationMessage("Category")*@
+        @Html.ValidationMessage("CategoryId")
+    </div>
+    <div class="form-group">
+        @Html.Label("QuantityPerUnit", "Quantity Per Unit")
+        @Html.TextArea("QuantityPerUnit", "", 5, 1, new { @class = "form-control" })
+        @Html.ValidationMessage("QuantityPerUnit")
+    </div>
+    <div class="form-group">
+        @Html.Label("UnitsInStock", "Units In Stock")
+        @Html.TextBox("UnitsInStock", "", new { @class = "form-control" })
+        @Html.ValidationMessage("UnitsInStock")
+    </div>
+    <div class="form-group">
+        @Html.Label("UnitPrice", "Unit Price")
+        @Html.TextBox("UnitPrice", "", new { @class = "form-control" })
+        @Html.ValidationMessage("UnitPrice")
+    </div>
+
+    @Html.Submit("Insert", new { @class = "btn btn-info pull-right" })
+    @*<button type="submit" class="btn btn-primary pull-right">Submit</button>*@
+}
+
+
+
+

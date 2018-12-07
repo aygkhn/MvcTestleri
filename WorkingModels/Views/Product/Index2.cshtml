@@ -1,0 +1,28 @@
+﻿@model ProductIndexViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+        @foreach (var category in Model.Categories)
+        {
+            @:Category:  @category.CategoryName
+            <br />
+        }
+
+        @foreach (var product in Model.Products)
+        {
+            @product.ProductName
+            <br />
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model HandleErrorInfo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    <b>Sorry! Some error occured</b>
+                    <br />
+                    @Model.Exception.Message
+                </div>
+                <div>
+                    <pre>@Model.Exception.StackTrace</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

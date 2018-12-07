@@ -1,0 +1,32 @@
+﻿@model List<GoliqDemo.Models.User>
+
+@{
+    var deleteAjaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "tblUser",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "progress",
+        Confirm = "Are you sure?",
+    };
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>User Name</th>
+            <th>Mail</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FullName</td>
+                <td>@user.UserName</td>
+                <td>@user.Mail</td>
+                <td>@Ajax.ActionLink("Delete", "Delete", new { userId = user.Id }, deleteAjaxOptions)</td>
+            </tr>
+        }
+    </tbody>
+</table>

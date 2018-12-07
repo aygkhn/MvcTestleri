@@ -1,0 +1,53 @@
+﻿@model ProductInsertViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var categories = new SelectList(Model.Categories, "CategoryId", "CategoryName");
+
+    Html.EnableUnobtrusiveJavaScript(false);
+    Html.EnableClientValidation(false);
+}
+
+<div class="page-header">
+    <h1 class="text-primary">New Product <small>with html helper for model</small></h1>
+</div>
+
+@using (Html.BeginForm("Insert", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(t => t.Product.ProductName, "Product Name")
+        @Html.TextBoxFor(t => t.Product.ProductName, new { @class = "form-control", placeholder = "Enter Product Name" })
+        @Html.ValidationMessageFor(t => t.Product.ProductName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(t => t.Product.CategoryId, "Category")
+        @Html.DropDownListFor(t => t.Product.CategoryId, categories, "--Select One--", new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.Product.CategoryId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(t => t.Product.QuantityPerUnit, "Quantity Per Unit")
+        @Html.TextAreaFor(t => t.Product.QuantityPerUnit, 5, 1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.Product.QuantityPerUnit)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(t => t.Product.UnitsInStock, "Units In Stock")
+        @Html.TextBoxFor(t => t.Product.UnitsInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.Product.UnitsInStock)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(t => t.Product.UnitPrice, "Unit Price")
+        @Html.TextBoxFor(t => t.Product.UnitPrice, "{0:N}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.Product.UnitPrice)
+    </div>
+    <div class="form-group">
+        <label>Product File</label>
+        <input type="file" name="file" />
+    </div>
+    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+}

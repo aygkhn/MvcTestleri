@@ -1,0 +1,12 @@
+﻿@model DisplayAndEditorTemplate.Models.Student
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="page-header">New Student</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+}

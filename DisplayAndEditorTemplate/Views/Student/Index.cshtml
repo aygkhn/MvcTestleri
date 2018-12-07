@@ -1,0 +1,25 @@
+﻿@model List<DisplayAndEditorTemplate.Models.Student>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="@Url.Action("Insert")" class="btn btn-primary">Add New Student</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.FullName</td>
+                <th><a href="@Url.Action("Detail", new { controller = "Student", studentId = student.StudentId })">Detail</a></th>
+            </tr>
+        }
+    </tbody>
+</table>

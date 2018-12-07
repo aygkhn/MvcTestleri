@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <h1 class="text-primary">New Product <small>with html elements</small></h1>
+</div>
+
+<form action="@Url.Action("Insert")" method="POST">
+    <div class="form-group">
+        <label for="ProductName">Product Name</label>
+        <input type="text" class="form-control" data-url="abc" id="ProductName" name="ProductName" placeholder="Enter Product Name">
+    </div>
+    <div class="form-group">
+        <label for="CategoryId">Category</label>
+        <select class="form-control" id="CategoryId" name="CategoryId">
+            <option value="">--Select One--</option>
+            <option value="1">Beverages</option>
+            <option value="2">Condiments</option>
+            <option value="3">Confections</option>
+            <option value="4">Dairy Products</option>
+            <option value="5">Grains/Cereals</option>
+            <option value="6">Meat/Poultry</option>
+            <option value="7">Produce</option>
+            <option value="8">Seafood</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="QuantityPerUnit">Quantity Per Unit</label>
+        <textarea class="form-control" cols="1" rows="5" id="QuantityPerUnit" name="QuantityPerUnit"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="UnitsInStock">Units In Stock</label>
+        <input class="form-control" id="UnitsInStock" name="UnitsInStock" type="text" />
+    </div>
+    <div class="form-group">
+        <label for="UnitPrice">Unit Price</label>
+        <input class="form-control" id="UnitPrice" name="UnitPrice" type="text" />
+    </div>
+    @*<div class="form-group">
+        <label for="CategoryName">Category Name</label>
+        <input class="form-control" id="Category_CategoryName" name="Category.CategoryName" type="text" />
+    </div>*@
+    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+</form>

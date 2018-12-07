@@ -1,0 +1,20 @@
+﻿@model DisplayAndEditorTemplate.Models.Student
+
+<div class="form-group">
+    <label for="firstName">Student Id</label>
+    @Html.TextBoxFor(t => t.StudentId, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    <label for="firstName">Full Name</label>
+    @Html.TextBoxFor(t => t.FullName, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    <label for="birthDate">Date of Birth</label>
+    @Html.EditorFor(t => t.BirthDate,"Date","test")
+</div>
+
+<div class="checkbox">
+    <label for="birthDate"> @Html.CheckBoxFor(t => t.IsGraduate) Graduate ?</label>
+</div>
+
+<button type="submit" class="btn btn-primary pull-right">Insert</button>

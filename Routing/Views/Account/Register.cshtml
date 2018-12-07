@@ -1,0 +1,30 @@
+﻿@model Routing.Models.User
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="firstName">User Name</label>
+        @Html.TextBoxFor(t => t.UserName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="firstName">Full Name</label>
+        @Html.TextBoxFor(t => t.FullName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="firstName">Mail</label>
+        @Html.TextBoxFor(t => t.Mail, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="firstName">Password</label>
+        @Html.PasswordFor(t => t.Password, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary pull-right">Register</button>
+}

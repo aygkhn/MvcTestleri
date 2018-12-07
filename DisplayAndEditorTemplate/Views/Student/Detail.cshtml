@@ -1,0 +1,20 @@
+﻿@model DisplayAndEditorTemplate.Models.Student
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="page-header">Student Detail</h4>
+
+@*@Model.FullName
+    <br />
+    @Model.BirthDate
+    <br />
+    @Html.Display("BirthDate", "Date")
+    <br />
+    @Html.DisplayFor(t => t.BirthDate)
+
+    <br/>
+    @Html.DisplayFor(t=>t)*@
+@Html.DisplayForModel(new { country = "Turkey", city = "Ankara" })

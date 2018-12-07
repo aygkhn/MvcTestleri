@@ -1,0 +1,35 @@
+﻿@model Routing.Models.User
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table tr > td:first-child {
+        font-weight: bold;
+    }
+</style>
+
+<h1>Profile</h1>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <td>User Id</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>User Name</td>
+        <td>
+            @Model.UserName
+        </td>
+    </tr>
+    <tr>
+        <td>Full Name</td>
+        <td>@Model.FullName</td>
+    </tr>
+    <tr>
+        <td>Mail</td>
+        <td>@Model.Mail</td>
+    </tr>
+</table>
+
