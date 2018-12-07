@@ -1,0 +1,37 @@
+﻿@model MyProductIndexViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @foreach (var item in Model.Categories)
+        {
+
+            @:Category Name: @item.CategoryName  
+            <br />
+        }
+        ----------------------------------------------
+        @foreach (var item in Model.Products)
+        {
+            <br />
+            @:Product Name: @item.ProductName
+
+
+
+
+
+
+
+
+        }
+    </div>
+</body>
+</html>

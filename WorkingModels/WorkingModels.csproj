@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MyProductController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -103,6 +106,7 @@
       <DependentUpon>201506021353427_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Migrations\Configuration.cs" />
+    <Compile Include="Models\MyProductModels\MyProductIndexViewModel.cs" />
     <Compile Include="Models\NorthwindContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductModels\ProductIndexViewModel.cs" />
@@ -113,6 +117,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Product\Index2.cshtml" />
     <Content Include="Views\Product\Demo.cshtml" />
+    <Content Include="Views\MyProduct\Index.cshtml" />
+    <Content Include="Views\MyProduct\Demo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MyPrudoct\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Models\Migrations\201506021353427_FirstMigration.resx">
